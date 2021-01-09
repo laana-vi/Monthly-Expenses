@@ -19,7 +19,6 @@ h2 {
     border-top: 2px solid $dark-grey;
     border-bottom: 2px solid $dark-grey;
     margin-bottom: 20px;
-    margin-top: 50px;
     
 }
 
@@ -227,20 +226,6 @@ span {
     font-weight: 700;
     font-size: 15px;
     float: right;
-}
-#currency-div {
-    float: right;
-}
-
-#currency-select {
-    margin: 20px;
-    background-color: transparent;
-    border: 2px solid $dark-grey;
-    border-radius: 5px;
-    @include text-dark();
-    max-width: 200px;
-    font-size: 15px;
-    
 }
 
 #invalid {

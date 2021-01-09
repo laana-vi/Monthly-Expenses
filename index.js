@@ -6,7 +6,6 @@ const expensesWrapper = document.querySelector('#expenses-wrapper')
 const select = document.querySelector('#select')
 const description = document.querySelector('#description')
 const amount = document.querySelector('#amount')
-const currency = document.querySelector('#currency-select')
 
 const btnSubmit = document.querySelector('#submit')
 
@@ -127,7 +126,7 @@ const totalAddToDOM = (arr1, arr2) => {
     let total = totalBudget(arr1, arr2)
     let totalPerc = percentage(totalIncome, totalExpense)
     if (arr1.length != 0) {
-        income.innerHTML = `INCOME <span>+ ${totalIncome.toLocaleString()} ${currency.value}</span>`
+        income.innerHTML = `INCOME <span>+ ${totalIncome.toLocaleString()}</span>`
         income.className = 'overall-income'
     }
     else {
@@ -136,7 +135,7 @@ const totalAddToDOM = (arr1, arr2) => {
     }
 
     if (arr2.length != 0) {
-        expenses.innerHTML = `EXPENSES <span>- ${totalExpense.toLocaleString()} ${currency.value}<span  class="percentage"> ${totalPerc}</span></span>`
+        expenses.innerHTML = `EXPENSES <span>- ${totalExpense.toLocaleString()}<span  class="percentage"> ${totalPerc}</span></span>`
         expenses.className = 'overall-expenses'
     }
     else {
@@ -145,15 +144,15 @@ const totalAddToDOM = (arr1, arr2) => {
     }
 
     if (total > 0) {
-        overall.textContent = `+${total.toLocaleString()} ${currency.value}`
+        overall.textContent = `+${total.toLocaleString()}`
         overall.className = 'plus'
     }
     else if (total == 0) {
-        overall.textContent = `${total.toLocaleString()} ${currency.value}`
+        overall.textContent = `${total.toLocaleString()}`
         overall.className = 'plus'
     }
     else {
-        overall.textContent = `${total.toLocaleString()} ${currency.value}`
+        overall.textContent = `${total.toLocaleString()}`
         overall.className = 'minus'
     }
 
@@ -189,7 +188,7 @@ const incomeAddToDOM = object => {
     //adds an income object o DOM
     const listItem = document.createElement('li')
     listItem.className = 'income-li'
-    listItem.innerHTML = `<p class='list-p'>${object.description}<span>+ ${object.amount.toLocaleString()} ${currency.value}</span></p>`
+    listItem.innerHTML = `<p class='list-p'>${object.description}<span>+ ${object.amount.toLocaleString()}</span></p>`
     listSur.append(listItem)
 
     const hr = document.createElement('hr')
@@ -220,7 +219,7 @@ const expensesAddToDOM = object => {
     let percentageValue = percentage(totalValue, expenseValue)
     const listItem = document.createElement('li')
     listItem.className = 'expenses-li'
-    listItem.innerHTML = `<p class='list-p'>${object.description}<span>- ${object.amount.toLocaleString()} ${currency.value}<span class="percentage"> ${percentageValue}</span></span></p>`
+    listItem.innerHTML = `<p class='list-p'>${object.description}<span>- ${object.amount.toLocaleString()}<span class="percentage"> ${percentageValue}</span></span></p>`
     listDef.append(listItem)
 
     const hr = document.createElement('hr')

@@ -19,7 +19,6 @@ h2 {
   border-top: 2px solid #141415;
   border-bottom: 2px solid #141415;
   margin-bottom: 20px;
-  margin-top: 50px;
 }
 
 #form-wrapper {
@@ -231,21 +230,6 @@ span {
   font-weight: 700;
   font-size: 15px;
   float: right;
-}
-
-#currency-div {
-  float: right;
-}
-
-#currency-select {
-  margin: 20px;
-  background-color: transparent;
-  border: 2px solid #141415;
-  border-radius: 5px;
-  font-family: "Poppins", sans-serif;
-  color: #141415;
-  max-width: 200px;
-  font-size: 15px;
 }
 
 #invalid {
