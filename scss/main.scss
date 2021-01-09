@@ -1,0 +1,257 @@
+@import "colors";
+@import "fonts";
+
+body {
+    background-image: url(../img/2.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+h2 {
+    font-family: $gloria;
+}
+
+#wrapper {
+    padding: 10px;
+}
+
+#budget-wrapper {
+    text-align: center;
+    border-top: 2px solid $dark-grey;
+    border-bottom: 2px solid $dark-grey;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    
+}
+
+#form-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid $dark-grey;
+}
+
+#month-year {
+    font-family: $gloria;
+    color: $dark-grey;
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.minus {
+    @include deficit-text();
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.plus {
+    @include surplus-text();
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.overall-expenses {
+    text-align: left;
+    width: 300px;
+    max-height: 25px;
+    @include deficit-text();
+    font-size: 1em;
+    background-color: $light-red;
+    border: 2px solid $dark-red;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto 10px auto;
+}
+
+.overall-income {
+    text-align: left;
+    width: 300px;
+    max-height: 25px;
+    @include surplus-text();
+    font-size: 1em;
+    background-color: $light-green;
+    border: 2px solid $dark-green;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto 10px auto;
+}
+
+#expenses-wrapper {
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+#form-wrapper {
+    select,
+    input {
+        color: $dark-grey;
+        font-size: 1.3em;
+        border-width: 2px;
+        border-color: $dark-grey;
+        border-radius: 5px;
+    }
+    button {
+        background-color: transparent;
+        border-style: none;
+    }
+    & > * {
+        padding: 2px;
+        margin: 10px;
+    }
+}
+
+option {
+    color: $dark-grey;
+}
+
+
+::placeholder {
+    color: $main-grey;
+}
+
+#surplus,
+#deficit {
+    text-align: left;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+
+span {
+    float: right;
+}
+
+#surplus {
+    background-color: $light-green;
+    border: 2px solid $dark-green;
+    border-radius: 5px;
+    @include surplus-text();
+    ul {
+        li:nth-of-type(even) {
+            background-color: $darker-green;
+        }
+    }
+}
+
+#deficit {
+    background-color: $light-red;
+    border: 2px solid $dark-red;
+    border-radius: 5px;
+    @include deficit-text();
+    ul {
+        li:nth-of-type(even) {
+            background-color: $darker-red;
+        }
+    }
+}
+
+@media only screen and(min-width: 992px) {
+    #expenses-wrapper {
+        display: flex;
+    }
+    #surplus {
+        flex: 1;
+        margin: 5px;
+    }
+
+    #deficit {
+        flex: 1;
+        margin: 5px;
+    }
+}
+
+.income-li,
+.expenses-li {
+    list-style-type: none;
+    padding: 5px 30px 5px 30px;
+}
+
+.income-hr {
+    border-color: $dark-green;
+}
+
+.expenses-hr {
+    border-color: $dark-red;
+}
+
+.list-p {
+    display: inline;
+}
+
+.list-def {
+    li {
+        button {
+            background-color: transparent;
+            border-style: none;
+            color: $dark-red;
+            opacity: 0;
+        }
+    }
+}
+
+.list-def {
+    li:hover {
+        button {
+            opacity: 1;
+        }
+    }
+}
+
+.list-sur {
+    li {
+        button {
+            background-color: transparent;
+            border-style: none;
+            color: $dark-green;
+            opacity: 0;
+        }
+    }
+}
+
+.list-sur {
+    li:hover {
+        button {
+            opacity: 1;
+        }
+    }
+}
+
+.percentage {
+    margin: 0px 0px 0px 5px;
+}
+
+#clear {
+    margin: 20px;
+    background-color: transparent;
+    border: 2px solid $dark-grey;
+    border-radius: 5px;
+    @include text-dark();
+    font-weight: 700;
+    font-size: 15px;
+    float: right;
+}
+#currency-div {
+    float: right;
+}
+
+#currency-select {
+    margin: 20px;
+    background-color: transparent;
+    border: 2px solid $dark-grey;
+    border-radius: 5px;
+    @include text-dark();
+    max-width: 200px;
+    font-size: 15px;
+    
+}
+
+#invalid {
+    background-color: $light-red;
+    @include deficit-text();
+    max-width: 200px;
+    border: 2px solid $dark-red;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import 'colors';
+
+$poppins: 'Poppins', sans-serif;
+$gloria : 'Gloria Hallelujah', cursive;
+
+@mixin deficit-text {
+    color: $dark-red;
+    font-family: $poppins;
+}
+
+@mixin surplus-text {
+    color: $dark-green;
+    font-family: $poppins;
+}
+
+@mixin text {
+    font-family: $roboto;
+    color: white;
+}
+
+@mixin text-dark {
+    font-family: $poppins;
+    color: $dark-grey;
+}
